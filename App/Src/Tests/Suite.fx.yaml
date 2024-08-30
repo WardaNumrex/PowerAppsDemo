@@ -1,0 +1,92 @@
+"'1da32a96-031b-469f-97c1-380d36e93838' As TestSuite":
+    Description: ="Task App Test Suite"
+    DisplayName: ="Suite"
+
+    "'04db817c-3c2e-4077-8d5d-586bd5a569df' As TestCase":
+        Description: ="New item added to SPO list"
+        DisplayName: ="Add New Record "
+
+        Step5 As TestStep:
+            Description: ="Trace"
+            Value: =Trace("Test Case Started")
+
+        Step1 As TestStep:
+            Description: ="Select 'Button1'"
+            Screen: =mainScreen
+            Value: =Select(Button1)
+
+        Step2 As TestStep:
+            Description: ="Set 'DataCardValue1'.Text to ""test"""
+            Screen: =EditScreen
+            Value: =SetProperty(DataCardValue1.Text, "test")
+
+        Step6 As TestStep:
+            Description: ="set count of Items"
+            Value: =Set(varCountRows,CountRows(taskList))
+
+        Step3 As TestStep:
+            Description: ="Set 'DataCardValue2'.Text to ""test"""
+            Screen: =EditScreen
+            Value: =SetProperty(DataCardValue2.Text, "test")
+
+        Step4 As TestStep:
+            Description: ="Select 'Button2'"
+            Screen: =EditScreen
+            Value: =Select(Button2)
+
+        Step7 As TestStep:
+            Description: ="Assert"
+            Screen: =mainScreen
+            Value: =Assert((varCountRows+1)=CountRows(taskList),"error storing data")
+
+    "'5f0aa7a8-5b34-40a7-b800-ed41be9ec5a9' As TestCase":
+        Description: ="edit a record"
+        DisplayName: ="edit record"
+
+        Step1 As TestStep:
+            Description: ="Select 'Icon2' in row 1 in 'galleryList'"
+            Screen: =mainScreen
+            Value: =Select(galleryList, 1, Icon2)
+
+        Step2 As TestStep:
+            Description: ="Set 'DataCardValue1'.Text to ""projectA2345"""
+            Screen: =EditScreen
+            Value: =SetProperty(DataCardValue1.Text, "projectA2345")
+
+        Step3 As TestStep:
+            Description: ="Select 'DataCardValue2'"
+            Screen: =EditScreen
+            Value: =Select(DataCardValue2)
+
+        Step4 As TestStep:
+            Description: ="Set 'DataCardValue2'.Text to ""HR executive"""
+            Screen: =EditScreen
+            Value: =SetProperty(DataCardValue2.Text, "HR executive")
+
+        Step5 As TestStep:
+            Description: |-
+                ="Set 'DataCardValue3'.SelectedItems to Table({'@odata.type':""#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference"",'Id':2,'Value':""under review""})"
+            Screen: =EditScreen
+            Value: |-
+                =SetProperty(DataCardValue3.SelectedItems, Table({'@odata.type':"#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",Id:2,Value:"under review"}))
+
+        Step6 As TestStep:
+            Description: ="Select 'DataCardValue3'"
+            Screen: =EditScreen
+            Value: =Select(DataCardValue3)
+
+        Step7 As TestStep:
+            Description: ="Set 'DataCardValue4'.SelectedDate to Date(2024,8,29)"
+            Screen: =EditScreen
+            Value: =SetProperty(DataCardValue4.SelectedDate, Date(2024,8,29))
+
+        Step8 As TestStep:
+            Description: ="Select 'DataCardValue4'"
+            Screen: =EditScreen
+            Value: =Select(DataCardValue4)
+
+        Step9 As TestStep:
+            Description: ="Select 'Button2'"
+            Screen: =EditScreen
+            Value: =Select(Button2)
+

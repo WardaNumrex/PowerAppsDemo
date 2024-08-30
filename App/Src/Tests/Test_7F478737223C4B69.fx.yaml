@@ -1,0 +1,4 @@
+Test_7F478737223C4B69 As AppTest:
+    OnTestComplete: |-
+        =Patch(taskListTestCaseResults,Defaults(taskListTestCaseResults),{Title:TestCaseResult.TestCaseId,StartTime:TestCaseResult.StartTime,EndTime:TestCaseResult.EndTime,Success:TestCaseResult.Success,TestCaseName:TestCaseResult.TestCaseName,TestFailureMessage:TestCaseResult.TestFailureMessage,TestSuiteID:TestCaseResult.TestSuiteId,TestSuiteName:TestCaseResult.TestSuiteName,Traces:Concat(TestCaseResult.Traces,Timestamp & ":" & Message & Char(13) & Char(13))})
+

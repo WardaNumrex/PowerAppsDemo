@@ -1,0 +1,174 @@
+mainScreen As screen:
+    Fill: =RGBA(232, 244, 217, 1)
+
+    Component1_2 As Component1:
+
+    "galleryList As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtered"
+        DelayItemLoading: =true
+        Height: =416
+        Items: =taskList
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =104
+        Width: =1287
+        X: =30
+        Y: =192
+        ZIndex: =2
+
+        Title1 As label:
+            Align: =Align.Center
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =26
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =120
+            X: =23
+            Y: =39
+            ZIndex: =2
+
+        Separator1 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle1 As rectangle:
+            Height: =Parent.TemplateHeight - Separator1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Title1_1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =26
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Date
+            VerticalAlign: =VerticalAlign.Top
+            Width: =120
+            X: =877
+            Y: =41
+            ZIndex: =7
+
+        Title1_2 As label:
+            Align: =Align.Center
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =26
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.department
+            VerticalAlign: =VerticalAlign.Top
+            Width: =120
+            X: =489
+            Y: =36
+            ZIndex: =8
+
+        Icon1 As icon.Trash:
+            Height: =31
+            Icon: =Icon.Trash
+            OnSelect: =Remove(taskList,ThisItem)
+            Width: =28
+            X: =1162
+            Y: =36
+            ZIndex: =9
+
+        Icon2 As icon.Edit:
+            Height: =25
+            Icon: =Icon.Edit
+            OnSelect: |-
+                =Set(
+                    varMode,
+                    "Edit"
+                );
+                EditForm(FormEdit);
+                Navigate(EditScreen)
+            Width: =25
+            X: =1215
+            Y: =40
+            ZIndex: =10
+
+    Label2 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =100
+        Size: =20
+        Text: ="Main Screen"
+        Width: =1366
+        ZIndex: =3
+
+    Button1 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(209, 232, 178, 1)
+        OnSelect: |-
+            =Set(
+                varMode,
+                "New"
+            );
+            NewForm(FormEdit);
+            Navigate(EditScreen)
+        Text: ="Add Data"
+        X: =1130
+        Y: =676
+        ZIndex: =7
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =7
+
+        Label4 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =66
+            Text: ="Title"
+            Width: =186
+            X: =30
+            Y: =126
+            ZIndex: =4
+
+        Label4_1 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =66
+            Text: ="Department"
+            Width: =313
+            X: =429
+            Y: =126
+            ZIndex: =5
+
+        Label4_2 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =66
+            Text: ="Date"
+            Width: =313
+            X: =797
+            Y: =126
+            ZIndex: =6
+
+    Button5 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(209, 232, 178, 1)
+        OnSelect: =Navigate(emailScreen)
+        Text: ="Contact us"
+        X: =79
+        Y: =676
+        ZIndex: =8
+
