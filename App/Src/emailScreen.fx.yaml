@@ -1,0 +1,53 @@
+emailScreen As screen:
+    Fill: =RGBA(232, 244, 217, 1)
+
+    TextInput5 As text:
+        Default: =""
+        X: =628
+        Y: =148
+        ZIndex: =1
+
+    TextInput6 As text:
+        Default: =""
+        X: =628
+        Y: =262
+        ZIndex: =2
+
+    TextInput7 As text:
+        Default: =""
+        Height: =145
+        Mode: =TextMode.MultiLine
+        X: =628
+        Y: =372
+        ZIndex: =3
+
+    Label1 As label:
+        Text: |-
+            ="To:"
+        X: =405
+        Y: =148
+        ZIndex: =4
+
+    Label3 As label:
+        Text: |-
+            ="Subject:"
+        X: =405
+        Y: =260
+        ZIndex: =5
+
+    Label6 As label:
+        Text: |-
+            ="Body:"
+        X: =405
+        Y: =372
+        ZIndex: =6
+
+    Button6 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(209, 232, 178, 1)
+        OnSelect: =Email.Run(TextInput5.Text,TextInput6.Text,TextInput7.Text)
+        Text: ="Send Email"
+        X: =708
+        Y: =610
+        ZIndex: =7
+

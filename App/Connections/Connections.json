@@ -1,0 +1,92 @@
+{
+  "34f0aa3a-0b38-4f70-83ee-474a0c89677b": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "ebcb2581-2880-4dad-9a4c-7c896eba11bd": {
+          "value": "shared_office365"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "a9bef2de-829e-4efb-8806-598b3bfdc6c5"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "ebcb2581-2880-4dad-9a4c-7c896eba11bd"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "a9bef2de-829e-4efb-8806-598b3bfdc6c5"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Email"
+    ],
+    "dependencies": {
+      "shared_office365": "ebcb2581-2880-4dad-9a4c-7c896eba11bd"
+    },
+    "dependents": [],
+    "id": "34f0aa3a-0b38-4f70-83ee-474a0c89677b"
+  },
+  "95ef5ede-b528-4390-a6b3-d2d39a975542": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write",
+      "providers/PowerPlatform.Governance/Operations/Delete"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/jayawan/releases/v1.0.1697/1.0.1697.3786/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://numrexpk.sharepoint.com/sites/Collaboration": {
+        "dataSources": {
+          "taskList": {
+            "tableName": "3502e7c2-9c45-435f-81db-60d241271e37"
+          },
+          "taskListTestCaseResults": {
+            "tableName": "1581e8e8-670e-4538-9cf1-15c4d5f8ccbd"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "taskList",
+      "taskListTestCaseResults"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "95ef5ede-b528-4390-a6b3-d2d39a975542"
+  },
+  "ebcb2581-2880-4dad-9a4c-7c896eba11bd": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1686/1.0.1686.3706/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "34f0aa3a-0b38-4f70-83ee-474a0c89677b"
+    ],
+    "id": "ebcb2581-2880-4dad-9a4c-7c896eba11bd"
+  }
+}
